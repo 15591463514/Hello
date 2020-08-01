@@ -1,0 +1,14 @@
+/* pages/suggest/suggest.wxss */
+.textarea{
+  height: 300rpx;
+  width: 90%;
+  background-color: rgb(245, 240, 240);
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+  border: 1px black solid;
+}
+
+.button{
+  color: aliceblue;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}

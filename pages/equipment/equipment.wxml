@@ -1,0 +1,4 @@
+<!--pages/equipment/equipment.wxml-->
+<view><text>设备卡号： 154874</text></view>
+<view><text>设备状态： 已打开</text></view>
+<view><text>已发送请求次数： 59</text></view>

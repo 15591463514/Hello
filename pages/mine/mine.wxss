@@ -1,0 +1,92 @@
+/* pages/mine/mine.wxss */
+page{
+  background-color: #F5F2F2;
+}
+view{
+  background-color: white;
+}
+.user_info{
+  height: 240rpx;
+  background-color: #62D681;
+}
+
+.user_edit{
+  display: inline-block;
+  color: #515754;
+  font-size: 24rpx;
+  height: 30rpx;
+  width: 86rpx;
+  background-color: #eefaf3;
+  border-radius: 30rpx;
+  margin-left: 20rpx;
+  padding-left: 16rpx;
+  /* position: absolute;
+  right: 20rpx;
+  top: 0rpx; */
+ 
+}
+
+.edit_img{
+  height: 18rpx;
+  width: 18rpx;
+  
+}
+
+
+.user_img{
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 10%;
+  position: absolute;
+  top: 60rpx;
+  left: 40rpx;
+}
+
+.user_text{
+  background-color: #62D681;
+  position: absolute;
+  left: 200rpx;
+  top: 70rpx;
+  font-size: 30rpx;
+  font-family: "黑体";
+}
+
+.user_name{
+  background-color: #62D681;
+  font-weight: bold;
+  font-size: 34rpx;
+  color: white;
+}
+
+.user_num{
+  background-color: #62D681;
+  margin-top: 20rpx;
+  color: #ede8e8;
+}
+
+.list_inner{
+  position: relative;
+  top: 28rpx;
+  left: 40rpx;
+  flex-direction: row;
+  display: flex;
+}
+
+.list{
+  height: 100rpx;
+  border: 1px solid #F5F2F2;
+}
+
+.list_img{
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.list_text{
+  font-size: 28rpx;
+  margin-left: 30rpx;
+  margin-top: 8rpx;
+  color: #777777;
+}
+
+

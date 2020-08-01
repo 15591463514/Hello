@@ -1,0 +1,66 @@
+<!--pages/mine/mine.wxml-->
+
+<view class="user_info">
+<!-- 用户信息：
+      图像（获取微信头像）
+      昵称（微信的昵称）
+      账号（微信账号）
+      编辑（可以更改个人信息）
+ -->
+  <image class="user_img" src="{{userInfo.avatarUrl}}"></image>
+ 
+  <view class="user_text">
+    <view class="user_name"><text>{{userInfo.nickName}}</text></view>
+      <view class="user_num">
+        <text>123****8910</text>
+         <navigator url="../edit/edit" class="user_edit">
+          <image src="../../image/edit.png" class="edit_img"></image>
+          <text> 编辑</text>
+         </navigator>
+    </view>
+  </view>
+</view>
+
+
+<view style="margin-top:20rpx">
+  <view class="list equipment" bindtap="equipment">
+    <view class="list_inner">
+      <image src="../../image/equipment.png" class="list_img"></image>
+      <view class="list_text"><text>我的设备</text></view>
+    </view>
+  </view>
+  <view class="list buy" bindtap="buy">
+    <view class="list_inner">
+      <image src="../../image/buy.png" class="list_img"></image>
+      <view class="list_text"><text>购买产品</text></view>
+    </view>
+  </view>
+  <view class="list customer" bindtap="customer">
+    <view class="list_inner">
+      <image src="../../image/customer.png" class="list_img"></image>
+      <view class="list_text"><text>客服中心</text></view>
+    </view>
+  </view>
+  <view class="list customer" bindtap="help">
+    <view class="list_inner">
+      <image src="../../image/help.png" class="list_img"></image>
+      <view class="list_text"><text>使用说明</text></view>
+    </view>
+  </view>
+  <view class="list suggest" bindtap="suggest">
+    <view class="list_inner">
+      <image src="../../image/suggest.png" class="list_img"></image>
+      <view class="list_text"><text>反馈建议</text></view>
+    </view>
+  </view>
+  <view class="list set" bindtap="set">
+    <view class="list_inner">
+      <image src="../../image/set.png" class="list_img"></image>
+      <view class="list_text"><text>设置</text></view>
+    </view>
+  </view>
+</view>
+
+
+
+

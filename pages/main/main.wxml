@@ -1,0 +1,23 @@
+<view class="top_wrap">
+  <view class="top_inner"></view>
+</view>
+<view class="index_state">当前状态：
+  <text wx:if="{{!isOpen}}">关闭</text>
+  <text wx:if="{{isOpen}}">打开</text>
+</view>
+<view>
+  <button disabled="{{disabled}}" class="index_button"  wx:if="{{!isOpen}}"  catchtap="handleButton" >
+    <image src="../../image/switch.png" class="index_button"></image>
+  </button>
+  <button disabled="{{disabled}}" class="index_button" wx:if="{{isOpen}}" catchtap="handleButton" >
+    <image src="../../image/switch-off.png" class="index_button"></image>
+  </button>
+</view>
+<view class="warn">
+<view style="display: flex;justify-content: center;">
+  <image src="../../image/warn.png" class="warn_img"></image>
+  <text class="warn_text">请勿频繁操作,10秒内禁止重复点击按钮</text>
+</view>
+</view>
+
+

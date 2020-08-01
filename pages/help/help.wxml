@@ -1,0 +1,23 @@
+<!--pages/help/help.wxml-->
+<view><text decode='true'>&nbsp; </text></view>
+<text decode='true'>&emsp;该小程序与北斗硬件产品配合使用，如果你已经购买了相关产品，请阅读以下使用注意事项：</text>
+<view><text decode='true'>&nbsp; </text></view>
+
+<text decode='true'>
+  &emsp;1.该小程序应与你的北斗卡绑定后才能正常使用，请先授权填写相关信息后重新打开小程序进行使用。
+</text>
+<!-- <view><text decode='true'>&nbsp; </text></view> -->
+
+<text decode='true'>
+  &emsp;2.请勿频繁点击按钮，以免造成数据传输堵塞，发送请求数据后1分钟左右,您的远程硬件设备才可以被打开或关闭。
+</text>
+<!-- <view><text decode='true'>&nbsp; </text></view> -->
+
+<text decode='true'>
+  &emsp;3.请勿将此产品作为其他商用，如果作为其他方面的需用请与我们联系。本产品的最终解释权归北斗牧源所有。
+</text>
+<!-- <view><text decode='true'>&nbsp; </text></view> -->
+
+<text decode='true'>
+  &emsp;4.详细介绍：
+</text>

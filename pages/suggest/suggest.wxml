@@ -1,0 +1,4 @@
+<!--pages/suggest/suggest.wxml-->
+<text decode="true">&emsp;你有任何的使用建议请在写在下方：</text>
+<textarea class="textarea" placeholder="请在这里输入内容"></textarea>
+<button class="button" bindtap="send">发 送</button>

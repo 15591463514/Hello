@@ -1,0 +1,9 @@
+<!--pages/cow/cow.wxml-->
+<view class="box_top">
+  <navigator url="../history/history" class="history">历史数据</navigator>
+  <view class="wrap">
+    <view class="left"><text class="left_text"><text>{{hour}}</text>:<text wx:if="{{minute_num}}">0</text><text>{{minute}}</text></text></view>
+    <view class="middle">|</view>
+    <view class="right"><text class="right_text">45头</text></view>
+  </view>
+</view>

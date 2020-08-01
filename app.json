@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/main/main",
+    "pages/cow/cow",
+    "pages/history/history",
+    "pages/mine/mine",
+    "pages/edit/edit",
+    "pages/equipment/equipment",
+    "pages/buy/buy",
+    "pages/custmoer/customer",
+    "pages/help/help",
+    "pages/suggest/suggest",
+    "pages/set/set"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#62D681",
+    "navigationBarTitleText": "北斗牧源",
+    "navigationBarTextStyle":"white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/main/main",
+      "text":"首页",
+      "color": "#9B9B9B",
+      "selectedColor": "#282828",
+      "iconPath": "./image/satellite.png",
+      "selectedIconPath": "./image/_satellite.png"
+    },
+    {
+      "pagePath": "pages/cow/cow",
+      "text":"记录",
+      "color": "#9B9B9B",
+      "selectedColor": "#282828",
+      "iconPath": "./image/cow.png",
+      "selectedIconPath": "./image/_cow.png"
+    },{
+      "pagePath": "pages/mine/mine",
+      "text":"我的",
+      "iconPath": "./image/mine.png",
+      "selectedIconPath": "./image/_mine.png"
+    }]
+  }
+}

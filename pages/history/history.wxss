@@ -1,0 +1,5 @@
+/* pages/history/history.wxss */
+.menu2{
+  height: 80rpx;
+}
+

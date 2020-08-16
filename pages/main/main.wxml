@@ -1,10 +1,12 @@
 <view class="top_wrap">
   <view class="top_inner">
-    <image src="../../image/menu.png" class="menu"></image>
+    <image src="../../image/menu.png" class="menu" bindtap="menu"></image>
     <text class="equipment">设备一 </text>
   </view>
 </view>
-<view class="list">
+
+<view class="list" wx:if="{{equipment_liststatus}}">
+  <div class="triangle"></div>
   <view>设备一</view>
   <view>设备二</view>
   <view>设备三</view>

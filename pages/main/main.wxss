@@ -11,8 +11,8 @@
 .menu{
   position: absolute;
   height: 50rpx;
-  width: 50rpx;
-  padding: 20rpx;
+  width: 60rpx;
+  padding: 26rpx;
 }
 
 .equipment{
@@ -21,27 +21,37 @@
   padding-top: 10px;
 }
 
+.triangle{
+  height: 0;
+  width: 0;
+  border-style: solid;
+  border-width: 36rpx;
+  border-color: transparent transparent #4B4B4B transparent;
+  border-top:none;
+  margin-left: -80rpx;
+}
+
 .list{
   text-align: center;
-  line-height: 100rpx;
+  line-height: 86rpx;
   position: absolute;
-  top: 80rpx;
+  top: 20rpx;
   left: 10rpx;
 }
 
 .list view{
-  height: 100rpx;
+  height: 80rpx;
   width: 200rpx;
   background-color: #4B4B4B;
   color:white;
   border-bottom: 1px solid #888;
 }
 
-.list>view:nth-child(1){
+.list>view:nth-child(2){
   border-radius: 10rpx 10rpx 0 0;
 }
 
-.list>view:nth-child(5){
+.list>view:nth-child(6){
   border-radius: 0 0 10rpx 10rpx ;
 }
 

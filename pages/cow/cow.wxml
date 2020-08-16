@@ -6,7 +6,7 @@
         <image src="../../image/ON.png" class="ON"></image>
       </button>
       <button class="OFF" style="height:260rpx;width:260rpx;padding:0;border-radius:50%" bindtap="OFF" disabled="{{disabled_off}}">
-        <image src="../../image/OFF.png" class="OFF" ></image>
+        <image src="../../image/guna.jpg" class="OFF" ></image>
       </button>
   </view>
 </view>

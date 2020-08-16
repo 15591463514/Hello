@@ -1,31 +1,22 @@
 /* pages/mine/mine.wxss */
 page{
-  background-color: #F5F2F2;
+  background-color: #EDEDED;
 }
 view{
   background-color: white;
 }
 .user_info{
   height: 240rpx;
-  background-color: #62D681;
+  background-color: #fff;
 }
 
-.user_edit{
-  display: inline-block;
-  color: #515754;
-  font-size: 24rpx;
-  height: 30rpx;
-  width: 86rpx;
-  background-color: #eefaf3;
-  border-radius: 30rpx;
-  margin-left: 20rpx;
-  padding-left: 16rpx;
-  /* position: absolute;
-  right: 20rpx;
-  top: 0rpx; */
- 
-}
+.button{
 
+  position: relative;
+  top:60rpx
+
+}
+  
 .edit_img{
   height: 18rpx;
   width: 18rpx;
@@ -43,7 +34,7 @@ view{
 }
 
 .user_text{
-  background-color: #62D681;
+  background-color: #fff;
   position: absolute;
   left: 200rpx;
   top: 70rpx;
@@ -52,16 +43,16 @@ view{
 }
 
 .user_name{
-  background-color: #62D681;
+  background-color: #fff;
   font-weight: bold;
   font-size: 34rpx;
-  color: white;
+  color: rgb(17, 17, 17);
 }
 
 .user_num{
-  background-color: #62D681;
+  background-color: #fff;
   margin-top: 20rpx;
-  color: #ede8e8;
+  color: #4d4d4d;
 }
 
 .list_inner{
@@ -86,7 +77,7 @@ view{
   font-size: 28rpx;
   margin-left: 30rpx;
   margin-top: 8rpx;
-  color: #777777;
+  color: #555555;
 }
 
 

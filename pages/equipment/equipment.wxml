@@ -1,4 +1,69 @@
 <!--pages/equipment/equipment.wxml-->
-<view><text>设备卡号： 154874</text></view>
+<!-- <view><text>设备卡号： 154874</text></view>
 <view><text>设备状态： 已打开</text></view>
-<view><text>已发送请求次数： 59</text></view>
+<view><text>已发送请求次数： 59</text></view> -->
+
+<view class="wrap one">
+  <!-- <view class="inner_no">
+    <view>添加设备：</view>
+    <view class="add_box" bindtap="add"><image  class="add" src="../../image/add.png"></image></view>
+  </view> -->
+  <view class="inner_OK">
+    <view class="equipment">设备1:</view>
+    <view>北斗卡号：<text>951140</text></view>
+    <view>当前状态：<text>已打开</text></view>
+    <view>已发送请求次数： <text>79</text></view>
+  </view>
+</view>
+
+<view class="wrap two">
+  <view class="inner_no">
+    <view>添加设备：</view>
+    <view class="add_box" bindtap="add"><image  class="add" src="../../image/add.png"></image></view>
+  </view>
+  <!-- <view class="inner_OK">
+    <view class="equipment">设备2:</view>
+    <view>北斗卡号：<text>951140</text></view>
+    <view>当前状态：<text>已打开</text></view>
+    <view>已发送请求次数： <text>79</text></view>
+  </view> -->
+</view>
+
+<view class="wrap there">
+  <view class="inner_no">
+    <view>添加设备：</view>
+    <view class="add_box" bindtap="add"><image  class="add" src="../../image/add.png"></image></view>
+  </view>
+  <!-- <view class="inner_OK">
+    <view class="equipment">设备3:</view>
+    <view>北斗卡号：<text>951140</text></view>
+    <view>当前状态：<text>已打开</text></view>
+    <view>已发送请求次数： <text>79</text></view>
+  </view> -->
+</view>
+
+<view class="wrap four">
+  <view class="inner_no">
+    <view>添加设备：</view>
+    <view class="add_box" bindtap="add"><image  class="add" src="../../image/add.png"></image></view>
+  </view>
+  <!-- <view class="inner_OK">
+    <view class="equipment">设备4:</view>
+    <view>北斗卡号：<text>951140</text></view>
+    <view>当前状态：<text>已打开</text></view>
+    <view>已发送请求次数： <text>79</text></view>
+  </view> -->
+</view>
+
+<view class="wrap five">
+  <view class="inner_no">
+    <view>添加设备：</view>
+    <view class="add_box" bindtap="add"><image  class="add" src="../../image/add.png"></image></view>
+  </view>
+  <!-- <view class="inner_OK">
+    <view class="equipment">设备5:</view>
+    <view>北斗卡号：<text>951140</text></view>
+    <view>当前状态：<text>已打开</text></view>
+    <view>已发送请求次数： <text>79</text></view>
+  </view> -->
+</view>

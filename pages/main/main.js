@@ -1,4 +1,25 @@
 var app = getApp();
+
+//封装一个倒计时的函数
+function countdown(that) {
+  var second = that.data.second
+  if (second == 0) {
+   // console.log("Time Out...");
+   that.setData({
+    second: 0
+   });
+   return ;
+  }
+  var time = setTimeout(function(){
+   that.setData({
+    second: second - 1
+   });
+   countdown(that);
+  }
+  ,1000)
+ }
+
+
 Page({
 
   /**
@@ -10,18 +31,18 @@ Page({
     timestamp:null,
     timestamp1:null,
     disabled:0,
-    hour:null,
-    minute:null
+    lastStatus:null,
+    lastTime:null,
+    second:10,
+    num:0,
+    new_time:"请下拉刷新"
   },
   
   handleButton(e){
-    
-  /*
-      点击按钮的功能：
-      1、获取缓存中的按钮出于的状态
-      2、如果状态处于打开，点击按钮则变成关闭状态
-      3、如果状态处于关闭，点击按钮则变成打开状态
-  */
+ 
+    /**
+     * 点击按钮切换状态
+     */
     
     //根据缓存的数据判断是否是打开的
     
@@ -31,59 +52,56 @@ Page({
     this.setData({
       isOpen
     });
-    //将状态缓存到本地
+
+    // //将状态缓存到本地
     wx.setStorage({
       key:"isOpen",
       data:isOpen
     });
 
+
+    /**
+     * 点击按钮发送请求
+     */
+
+
     if(this.data.isOpen){
       //发送请求数据
       wx.request({
-        url:"http://api.qixingyun.com/data/send?appId=bd28ba07899da9f081&toCard=395804&content=%E6%89%93%E5%BC%80%E5%BC%80%E5%85%B3&dataType=1",
+        url:"http://api.qixingyun.com/data/send?appId=bd28ba07899da9f081&toCard=951140&content=%E6%89%93%E5%BC%80%E6%B0%B4%E4%BA%95&dataType=1",
         success(res){
           console.log(res.data);
-          
         }
       });
       wx.showToast({
-        title: '成功打开水槽',
-        icon: 'success',
-        duration: 2000
-      })
-      
-      var myDate = new Date();//获取系统当前时间
-      var hour = myDate.getHours(); //获取当前小时数(0-23)
-      var minute = myDate.getMinutes(); //获取当前分钟数(0-59)
-
-      //console.log(myDate.getHours());
-      //console.log(myDate.getMinutes());
-      //更新main的data
-      this.setData({
-        hour:hour,
-        minute:minute,
-      })
-      //更新全局的data
-      app.globalData.hour = hour;
-      app.globalData.minute = minute;
-
-     
+        title: '正在打开水井',
+        icon: 'loading',
+        duration: 1000
+      });
+      setTimeout(function(){
+        wx.showToast({
+          title: '水井已打开',
+        })
+      },2000)
 
     }else{
 
       wx.request({
-        url:"http://api.qixingyun.com/data/send?appId=bd28ba07899da9f081&toCard=395804&content=%E5%85%B3%E9%97%AD%E5%BC%80%E5%85%B3&dataType=1",
+        url:"http://api.qixingyun.com/data/send?appId=bd28ba07899da9f081&toCard=951140&content=%E5%85%B3%E9%97%AD%E6%B0%B4%E4%BA%95123456&dataType=1",
         success(res){
           console.log(res.data);
-     
         }
       });
-
       wx.showToast({
-        title: '成功关闭水槽',
-        icon: 'success',
-        duration: 2000
-      })
+        title: '正在关闭水井',
+        icon: 'loading',
+        duration: 1000
+      });
+      setTimeout(function(){
+        wx.showToast({
+          title: '水井已关闭',
+        })
+      },2000)
     }
     
     var timestamp1 = Date.parse( new Date());
@@ -93,7 +111,9 @@ Page({
     //console.log(this.data.timestamp1);
 
 
-
+    /**
+     * 点击按钮一段时间禁止再次点击
+     */
     
     //执行完后，设置按钮禁用状态
     this.setData({
@@ -111,9 +131,14 @@ Page({
       }
       fun();
     },10000)
-      
 
-
+    /**
+     * 点击按钮启动倒计时
+     */
+    this.setData({
+      second: 10
+     });
+    countdown(this);
   },
 
 
@@ -125,7 +150,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+     
+    /*
     //获取本地的缓存数据
     let stage = wx.getStorageSync('isOpen');
 
@@ -138,6 +164,34 @@ Page({
         isOpen:true
       })
     }
+    */
+
+
+    /**
+     * 利用发送请求，准确获取水井的状态
+     */
+    // 水井已打开	A4CBAEBEAED2D1B4F2BFAA
+    // 水井已关闭	A4CBAEBEAED2D1B9D8B1D5
+    let lastStatus = wx.getStorageSync('lastStatus');
+    if(lastStatus == "A4CBAEBEAED2D1B4F2BFAA"){
+      this.setData({
+        isOpen:true
+      });
+      console.log("水井已打开");
+    }
+    else if(lastStatus == "A4CBAEBEAED2D1B9D8B1D5"){
+      this.setData({
+        isOpen:false
+      });
+      console.log("水井已关闭");
+    }else{
+      //这种情况是牧场的终端发回来的牛的数量，这种情况下按钮的状态也应该是打开的
+      this.setData({
+        isOpen:true
+      });
+      console.log("水井已打开");
+    }
+
 
     
   },
@@ -152,7 +206,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+   
   },
 
   /**
@@ -188,5 +242,88 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+
+  /**
+   * 下拉刷新,刷新牛的数量和时间
+   */
+  onPullDownRefresh(){
+
+    //如果状态是关闭禁止下拉刷新
+    if(!this.data.isOpen){
+      wx.stopPullDownRefresh();
+    }
+
+
+    if(this.data.isOpen){
+
+      let that = this;
+
+      //如果按钮处于打开状态,则请求数据
+      wx.request({
+        url: 'http://api.qixingyun.com/data/list?appId=bd28ba07899da9f081&toCard=951140&msgId=0',
+        success(cow_num){
+
+          /**牛羊数量 */
+          //获取到短报文原文内容
+          var result = cow_num.data.result.receiveMsgs[(cow_num.data.result.receiveMsgs.length-1)].content;
+          //进行解码操作:
+          //获取到的字符串去掉前两位
+          result = result.slice(2);
+
+          //将字符串转化为数组
+          result=result.split(''); 
+
+          //去掉奇数位的数字，留下偶数位的数字重新组合新的字符串
+          var num = "";
+          for(var j=0;j<result.length;j++){
+            if(j%2==0){
+              result[j]="";
+            }
+            num += result[j]+"";
+          }
+          console.log(num);
+
+          if(num.length<=4){
+            that.setData({
+            num:num});
+          }
+          
+
+          /**更新时间 */
+
+          var time = cow_num.data.result.receiveMsgs[(cow_num.data.result.receiveMsgs.length-1)].createdTime;
+          console.log(time);
+
+          that.setData({
+            lastTime:time
+          });
+
+          //获取到时间的格式为2020-08-03 10:25:35，只保留时间部分
+          var new_time = time.slice(11);
+          console.log(new_time);
+          
+          that.setData({
+            new_time:new_time
+          });
+
+        }
+      });
+
+    
+    setTimeout(function(){
+      wx.stopPullDownRefresh();
+      wx.showToast({
+        title: '刷新成功',
+      })
+    },1000)
+   
   }
-})
+}
+
+});
+
+
+
+
+

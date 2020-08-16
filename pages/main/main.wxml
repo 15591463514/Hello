@@ -1,22 +1,47 @@
 <view class="top_wrap">
-  <view class="top_inner"></view>
+  <view class="top_inner">
+    <image src="../../image/menu.png" class="menu"></image>
+    <text class="equipment">设备一 </text>
+  </view>
 </view>
-<view class="index_state">当前状态：
-  <text wx:if="{{!isOpen}}">关闭</text>
-  <text wx:if="{{isOpen}}">打开</text>
+<view class="list">
+  <view>设备一</view>
+  <view>设备二</view>
+  <view>设备三</view>
+  <view>设备四</view>
+  <view>设备五</view>
+</view>
+<view class="box_top">
+  <view class="wrap" wx:if="{{isOpen}}">
+    <view class="left">
+      <text class="left_text">{{new_time}}</text>
+    </view>
+    <view class="middle">|</view>
+      <view class="right">
+        <view style="display: flex;justify-content: center;">
+        <image class="cow_num_img" src="../../image/cow_num.png"></image>
+        <text class="right_text">x <text>{{num}}</text></text>
+        <!-- <image src="../../image/refresh.png" class="refresh_img" bindtap="refresh"></image> -->
+      </view>
+    </view>
+  </view>
+</view>
+<view class="index_state">
+  <text wx:if="{{!isOpen}}">已关闭</text>
+
 </view>
 <view>
   <button disabled="{{disabled}}" class="index_button"  wx:if="{{!isOpen}}"  catchtap="handleButton" >
-    <image src="../../image/switch.png" class="index_button"></image>
+    <image src="../../image/switch.png" class="index_button index_img"></image>
   </button>
   <button disabled="{{disabled}}" class="index_button" wx:if="{{isOpen}}" catchtap="handleButton" >
-    <image src="../../image/switch-off.png" class="index_button"></image>
+    <image src="../../image/switch-off.png" class="index_button index_img" ></image>
   </button>
 </view>
 <view class="warn">
-<view style="display: flex;justify-content: center;">
+<view style="display: flex;justify-content: center;" wx:if="{{disabled}}" >
   <image src="../../image/warn.png" class="warn_img"></image>
-  <text class="warn_text">请勿频繁操作,10秒内禁止重复点击按钮</text>
+  <text class="warn_text">请勿频繁操作,<text class="second">{{second}}</text>秒内禁止重复点击按钮</text>
 </view>
 </view>
 

@@ -1,1 +1,9 @@
 /* pages/custmoer/customer.wxss */
+Page{
+  padding: 20rpx;
+}
+
+.Tel{
+  margin-top: 600rpx;
+  background: linear-gradient(120deg, #f9fc69, #92ff67, #62fff7);
+}

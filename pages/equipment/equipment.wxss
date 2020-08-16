@@ -1,1 +1,54 @@
 /* pages/equipment/equipment.wxss */
+
+Page{
+  background-color: rgb(255, 255, 255);
+}
+
+.wrap{
+  /* border: 1px solid white; */
+  border-radius: 30rpx;
+  margin: 30rpx 30rpx 30rpx 30rpx;
+  height: 100px;
+  padding: 20rpx;
+}
+
+.one{
+  /* background-color: #16D2C4; */
+  background-image: linear-gradient(180deg, #16D2C4 0%, #fff 100%);
+}
+
+.two{
+  /* background-color: #51DB8D; */
+  background-image: linear-gradient(180deg, #51DB8D 0%, #fff 100%);
+}
+
+.there{
+  /* background-color: #FF874A; */
+  background-image: linear-gradient(180deg, #FF874A 0%, #fff 100%);
+}
+
+.four{
+  /* background-color: #7F55FF; */
+  background-image: linear-gradient(180deg, #7F55FF 0%, #fff 100%);
+}
+
+.five{
+  /* background-color: #FCC458; */
+  background-image: linear-gradient(180deg, #FCC458 0%, #fff 100%);
+}
+
+.equipment{
+  font-size: 36rpx;
+  font-weight: bolder;
+}
+
+.add_box{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.add{
+  height: 50px;
+  width: 50px;
+}

@@ -1,2 +1,5 @@
 <!--pages/buy/buy.wxml-->
-<text>pages/buy/buy.wxml</text>
+
+<!-- <view class="img"></view> -->
+<view class="img_box"><image class="img" mode="aspectFit"></image></view>
+<view class="text_box">需要产品，请联系我</view>

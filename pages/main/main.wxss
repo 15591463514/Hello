@@ -5,14 +5,107 @@
 .top_inner{
   height: 80rpx;
   background-color: white;
-  border-radius: 30px 30px 0 0;
+  border-radius: 0 30px 0 0;
+}
+
+.menu{
+  position: absolute;
+  height: 50rpx;
+  width: 50rpx;
+  padding: 20rpx;
+}
+
+.equipment{
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.list{
+  text-align: center;
+  line-height: 100rpx;
+  position: absolute;
+  top: 80rpx;
+  left: 10rpx;
+}
+
+.list view{
+  height: 100rpx;
+  width: 200rpx;
+  background-color: #4B4B4B;
+  color:white;
+  border-bottom: 1px solid #888;
+}
+
+.list>view:nth-child(1){
+  border-radius: 10rpx 10rpx 0 0;
+}
+
+.list>view:nth-child(5){
+  border-radius: 0 0 10rpx 10rpx ;
+}
+
+.wrap{
+  /* position: absolute; */
+  height: 100rpx;
+  margin-top: 120rpx;
+  width: 100%;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.middle{
+  float: left;
+  width: 2%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: dimgray;
+}
+
+.left{
+  height: 100rpx;
+  width: 49%;
+  float: left;
+  text-align: center;
+  line-height: 100rpx;
+  font-family:  '黑体';
+  
+}
+
+.right{
+  height: 100rpx;
+  width: 49%;
+  float: left;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.cow_num_img{
+  height: 70rpx;
+  width: 70rpx;
+  /* position: relative;
+  top:8rpx */
+  margin-top: 14rpx;
+}
+
+.right_text{
+  margin-top: rpx;
+}
+
+.refresh_img{
+  height: 40rpx;
+  width: 46rpx;
+  margin-top: 28rpx;
+  margin-left: 20rpx;
+  display: block;
 }
 
 .index_state{
   font-weight: 900;
-  margin-top: 160rpx;
+  margin-top: 150rpx;
   display: flex;
-  font-family: "楷体";
+  font-family: "黑体";
   justify-content: center;
   align-items: center;
 }
@@ -49,4 +142,9 @@
 
 .warn_text{
   font-size: 28rpx;
+}
+
+.second{
+  font-weight: bolder;
+  font-size: 36rpx;
 }

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+   
   },
 
   /**
@@ -62,5 +62,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 点击➕添加设备
+   */
+  add:function(){
+   wx.navigateTo({
+     url: '../password/password',
+   })
+
+
   }
+
 })

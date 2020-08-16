@@ -1,28 +1,27 @@
 <!--pages/mine/mine.wxml-->
 
-<view class="user_info">
+
+
+
+
+<view class="user_info" >
 <!-- 用户信息：
       图像（获取微信头像）
       昵称（微信的昵称）
       账号（微信账号）
       编辑（可以更改个人信息）
  -->
-  <image class="user_img" src="{{userInfo.avatarUrl}}"></image>
- 
-  <view class="user_text">
-    <view class="user_name"><text>{{userInfo.nickName}}</text></view>
-      <view class="user_num">
-        <text>123****8910</text>
-         <navigator url="../edit/edit" class="user_edit">
-          <image src="../../image/edit.png" class="edit_img"></image>
-          <text> 编辑</text>
-         </navigator>
+    <image class="user_img" src="{{userInfo.avatarUrl}}"></image>
+    <view class="user_text">
+      <view class="user_name"><text>{{userInfo.nickName}}</text></view>
+        <view class="user_num">
+          <text>123****8910</text>
+      </view>
     </view>
-  </view>
 </view>
 
 
-<view style="margin-top:20rpx">
+<view style="margin-top:24rpx">
   <view class="list equipment" bindtap="equipment">
     <view class="list_inner">
       <image src="../../image/equipment.png" class="list_img"></image>
@@ -53,6 +52,7 @@
       <view class="list_text"><text>反馈建议</text></view>
     </view>
   </view>
+  <view style="height:16rpx;width:100%;background-color:#F5F2F2" ></view>
   <view class="list set" bindtap="set">
     <view class="list_inner">
       <image src="../../image/set.png" class="list_img"></image>

@@ -8,6 +8,7 @@ Page({
    */
   data: {
     userInfo:null,
+    isNum:false,
     
   },
 
@@ -18,17 +19,40 @@ Page({
 
     //打印全局数据中的个人信息
     console.log(mine_data.globalData.userInfo);
+
     //设置变量保存
     let that =this;
-    console.log(that.data.userInfo);
+
     //更新data中的数据
     that.setData({
       userInfo:mine_data.globalData.userInfo
     }
     );
-    console.log(that.data.userInfo);
 
-    console.log(mine_data.globalData.userInfo);
+
+    wx.getSystemInfo({
+      success: (SystemInfo) => {
+        console.log(SystemInfo);
+      }
+    });
+
+    wx.getBatteryInfo({
+      success: (BatteryInfo) => {
+        console.log(BatteryInfo);
+      },
+    })
+
+
+
+
+
+
+
+
+
+
+
+    
   },
 
   /**
@@ -109,6 +133,12 @@ Page({
     wx.navigateTo({
       url:'../set/set'
     })
+
+
+
+
+
+
   },
 
 

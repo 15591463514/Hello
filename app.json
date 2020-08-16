@@ -3,7 +3,6 @@
     "pages/index/index",
     "pages/main/main",
     "pages/cow/cow",
-    "pages/history/history",
     "pages/mine/mine",
     "pages/edit/edit",
     "pages/equipment/equipment",
@@ -11,13 +10,14 @@
     "pages/custmoer/customer",
     "pages/help/help",
     "pages/suggest/suggest",
-    "pages/set/set"
+    "pages/set/set",
+    "pages/password/password"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#62D681",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "北斗牧源",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle":"black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
@@ -43,5 +43,9 @@
       "iconPath": "./image/mine.png",
       "selectedIconPath": "./image/_mine.png"
     }]
+  },"permission": {
+    "scope.userLocation": {
+      "desc": "获取位置权限后，方可远程控制硬件" 
+    }
   }
 }

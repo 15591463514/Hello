@@ -1,6 +1,0 @@
-<!--pages/history/history.wxml-->
-<view class="menu2">
-      <view class="menu2_view" wx:for="{{arry}}" >
-            <navigator>{{item.text}}</navigator>
-      </view>
-</view>

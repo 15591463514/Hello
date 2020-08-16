@@ -1,9 +1,12 @@
 <!--pages/cow/cow.wxml-->
 <view class="box_top">
-  <navigator url="../history/history" class="history">历史数据</navigator>
-  <view class="wrap">
-    <view class="left"><text class="left_text"><text>{{hour}}</text>:<text wx:if="{{minute_num}}">0</text><text>{{minute}}</text></text></view>
-    <view class="middle">|</view>
-    <view class="right"><text class="right_text">45头</text></view>
+  <view class="text_top">围栏状态：<text wx:if='{{status}}'>打开</text><text wx:if='{{!status}}'>关闭</text></view> 
+  <view class="switch">
+      <button class="ON" style="height:260rpx;width:260rpx;padding:0;border-radius:50%"  bindtap="ON" disabled="{{disabled_on}}">
+        <image src="../../image/ON.png" class="ON"></image>
+      </button>
+      <button class="OFF" style="height:260rpx;width:260rpx;padding:0;border-radius:50%" bindtap="OFF" disabled="{{disabled_off}}">
+        <image src="../../image/OFF.png" class="OFF" ></image>
+      </button>
   </view>
 </view>

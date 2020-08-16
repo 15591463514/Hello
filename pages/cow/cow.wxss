@@ -1,49 +1,39 @@
 /* pages/cow/cow.wxss */
-
-.history{
-  color:rgb(247, 242, 242);
-  font-size: small;
-  position: absolute;
-  right: 20rpx;
-  top: 20rpx;
+Page{
+  background-color: #62D681;
 }
 
 .box_top{
-  background-image: linear-gradient(180deg, #62D681 0%, #ffffff 100%);
-  height: 320rpx;
+  /* background-image: linear-gradient(180deg, #62D681 0%, #ffffff 100%); */
+  height: 400rpx;
+
 }
 
+.text_top{
+  position: relative;
+  top: 60rpx;
+  left: 40rpx;
+  font-size: 50rpx;
+  font-weight: 700;
+  
+}
 
-.wrap{
+.switch{
+  height: 660rpx;
+  width:300rpx;
   position: absolute;
-  height: 100rpx;
-  margin-top: 120rpx;
-  width: 100%;
-  /* display: flex;
-  flex-direction: column; */
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
 }
 
-.middle{
-  float: left;
-  width: 2%;
-  height: 100rpx;
-  text-align: center;
-  line-height: 100rpx;
-  color: dimgray;
+.ON{
+  height: 261rpx;
+  width: 261rpx;
+  margin-bottom: 80rpx;
 }
 
-.left{
-  height: 100rpx;
-  width: 49%;
-  float: left;
-  text-align: center;
-  line-height: 100rpx;
-}
-
-.right{
-  height: 100rpx;
-  width: 49%;
-  float: left;
-  text-align: center;
-  line-height: 100rpx;
+.OFF{
+  height: 261rpx;
+  width: 261rpx;
 }

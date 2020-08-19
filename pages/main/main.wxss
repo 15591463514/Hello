@@ -1,3 +1,7 @@
+Page{
+  height: 100%;
+}
+/* 设置页面的圆角 */
 .top_wrap{
   height: 80rpx;
   background-color: #62D681;
@@ -8,19 +12,26 @@
   border-radius: 0 30px 0 0;
 }
 
+
+/* menu图标 */
 .menu{
   position: absolute;
   height: 50rpx;
   width: 60rpx;
   padding: 26rpx;
+  z-index: 500;
 }
 
+
+/* 设备文字 */
 .equipment{
   display: flex;
   justify-content: center;
   padding-top: 10px;
 }
 
+
+/* 三角 */
 .triangle{
   height: 0;
   width: 0;
@@ -31,39 +42,46 @@
   margin-left: -80rpx;
 }
 
+
+/* 设备下拉列表 */
 .list{
   text-align: center;
-  line-height: 86rpx;
+  line-height: 90rpx;
   position: absolute;
   top: 20rpx;
   left: 10rpx;
+  z-index: 400;
 }
 
+
+/* 列表的子view */
 .list view{
-  height: 80rpx;
+  height: 90rpx;
   width: 200rpx;
   background-color: #4B4B4B;
   color:white;
   border-bottom: 1px solid #888;
 }
 
+
+/* 第二个子view的 */
 .list>view:nth-child(2){
   border-radius: 10rpx 10rpx 0 0;
 }
 
+
+/* 最后一个子view */
 .list>view:nth-child(6){
   border-radius: 0 0 10rpx 10rpx ;
 }
 
+
+/* 牛喝水的数据 */
 .wrap{
-  /* position: absolute; */
   height: 100rpx;
   margin-top: 120rpx;
   width: 100%;
-  /* display: flex;
-  flex-direction: column; */
 }
-
 .middle{
   float: left;
   width: 2%;
@@ -72,7 +90,6 @@
   line-height: 100rpx;
   color: dimgray;
 }
-
 .left{
   height: 100rpx;
   width: 49%;
@@ -80,9 +97,7 @@
   text-align: center;
   line-height: 100rpx;
   font-family:  '黑体';
-  
 }
-
 .right{
   height: 100rpx;
   width: 49%;
@@ -90,27 +105,17 @@
   text-align: center;
   line-height: 100rpx;
 }
-
 .cow_num_img{
   height: 70rpx;
   width: 70rpx;
-  /* position: relative;
-  top:8rpx */
   margin-top: 14rpx;
 }
-
 .right_text{
   margin-top: rpx;
 }
 
-.refresh_img{
-  height: 40rpx;
-  width: 46rpx;
-  margin-top: 28rpx;
-  margin-left: 20rpx;
-  display: block;
-}
 
+/* 按钮的打开关闭状态 */
 .index_state{
   font-weight: 900;
   margin-top: 150rpx;
@@ -121,6 +126,7 @@
 }
 
 
+/* 水井开关按钮 */
 .index_button{
   border-radius: 50%;
   height: 400rpx;
@@ -133,27 +139,20 @@
   background: rgb(233, 228, 228);
 }
 
-.warn{
 
+/* 下方的提示信息 */
+.warn{
   position: absolute;
   top: 90%;
   width: 100%;
-
 }
-
-
-
 .warn_img{
   height: 40rpx;
   width: 40rpx;
-  /* position: relative;
-  top:8rpx */
 }
-
 .warn_text{
   font-size: 28rpx;
 }
-
 .second{
   font-weight: bolder;
   font-size: 36rpx;

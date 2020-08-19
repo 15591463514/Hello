@@ -36,12 +36,14 @@ Page({
     second:10,
     num:0,
     new_time:"请下拉刷新",
-    equipment_liststatus:false,
-    equipment_id:1
+    equipment_liststatus:true,
+    equipment_id:1,
+    showView:false
   },
   
   handleButton(e){
  
+    
     /**
      * 点击按钮切换状态
      */
@@ -328,13 +330,14 @@ Page({
 /**
  * 点击menu，弹出设备列表
  */
-menu(){
+menu: function(){
 
   // 更新显示或者隐藏的状态
   let equipment = !this.data.equipment_liststatus;
   this.setData({
     equipment_liststatus:equipment
   })
+
 
 }
 

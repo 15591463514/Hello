@@ -1,11 +1,15 @@
+<!-- 遮盖层 -->
+<!-- <view style='width:100%;min-height:100%;background:red;background-size:100% 100%;'></view> -->
+<!-- 上部的设备信息 -->
 <view class="top_wrap">
   <view class="top_inner">
-    <image src="../../image/menu.png" class="menu" bindtap="menu"></image>
+    <image src="../../image/menu.png" class="menu" catchtap="menu"></image>
     <text class="equipment">设备一 </text>
   </view>
 </view>
 
-<view class="list" wx:if="{{equipment_liststatus}}">
+<!-- 设备list -->
+<view class="list" hidden="{{equipment_liststatus}}">
   <div class="triangle"></div>
   <view>设备一</view>
   <view>设备二</view>
@@ -13,6 +17,8 @@
   <view>设备四</view>
   <view>设备五</view>
 </view>
+
+<!-- 设备的关闭和打开状态 -->
 <view class="box_top">
   <view class="wrap" wx:if="{{isOpen}}">
     <view class="left">
@@ -30,16 +36,19 @@
 </view>
 <view class="index_state">
   <text wx:if="{{!isOpen}}">已关闭</text>
-
 </view>
+
+<!-- 按钮 -->
 <view>
-  <button disabled="{{disabled}}" class="index_button"  wx:if="{{!isOpen}}"  catchtap="handleButton" >
+  <button disabled="{{disabled}}" class="index_button" wx:if="{{!isOpen}}" catchtap="handleButton" >
     <image src="../../image/switch.png" class="index_button index_img"></image>
   </button>
   <button disabled="{{disabled}}" class="index_button" wx:if="{{isOpen}}" catchtap="handleButton" >
     <image src="../../image/switch-off.png" class="index_button index_img" ></image>
   </button>
 </view>
+
+<!-- 下方的提示 -->
 <view class="warn">
 <view style="display: flex;justify-content: center;" wx:if="{{disabled}}" >
   <image src="../../image/warn.png" class="warn_img"></image>

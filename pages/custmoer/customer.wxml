@@ -1,6 +1,5 @@
 <!--pages/custmoer/customer.wxml-->
-<view><text>如果你在使用过程中有任何疑问，请拨打客服热线：</text></view>
-<!-- <view><text>高*奇经理： 15335673070</text></view> -->
-<view><text>石先生： 15591463514</text></view>
-<view>或者你也可以直接点击下方按钮拨打电话：</view>
-<button bindtap="Tel" class="Tel" style="font-size:100rpx">点我</button>
+<view class="contact_custmoer"><text>如果你在使用过程中有任何疑问，请联系客服：</text></view>
+
+<button open-type="contact" type="warn">打开客服会话</button>
+<button bindtap="Tel" type="warn">拨打客服热线</button> 

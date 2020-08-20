@@ -1,6 +1,7 @@
 <!-- 遮盖层 -->
 <!-- <view style='width:100%;min-height:100%;background:red;background-size:100% 100%;'></view> -->
 <!-- 上部的设备信息 -->
+
 <view class="top_wrap">
   <view class="top_inner">
     <image src="../../image/menu.png" class="menu" catchtap="menu"></image>
@@ -11,12 +12,14 @@
 <!-- 设备list -->
 <view class="list" hidden="{{equipment_liststatus}}">
   <div class="triangle"></div>
-  <view>设备一</view>
-  <view>设备二</view>
-  <view>设备三</view>
-  <view>设备四</view>
-  <view>设备五</view>
+  <view bindtap="scanCode" >扫一扫</view>
+  <view bindtap="add">添加设备</view>
+  <view bindtap="switch">切换设备</view>
+
+  <!-- <view>设备四</view>
+  <view>设备五</view> -->
 </view>
+
 
 <!-- 设备的关闭和打开状态 -->
 <view class="box_top">

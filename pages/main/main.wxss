@@ -71,7 +71,7 @@ Page{
 
 
 /* 最后一个子view */
-.list>view:nth-child(6){
+.list>view:last-child{
   border-radius: 0 0 10rpx 10rpx ;
 }
 
@@ -157,3 +157,4 @@ Page{
   font-weight: bolder;
   font-size: 36rpx;
 }
+

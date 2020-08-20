@@ -3,7 +3,13 @@ Page{
   padding: 20rpx;
 }
 
-.Tel{
-  margin-top: 600rpx;
-  background: linear-gradient(120deg, #f9fc69, #92ff67, #62fff7);
+button{
+  margin-top: 100rpx;
 }
+
+.contact_custmoer{
+  font-weight: bolder;
+  margin-top: 40rpx;
+ margin-left: 20rpx;
+}
+

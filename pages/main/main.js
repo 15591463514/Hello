@@ -339,8 +339,39 @@ menu: function(){
   })
 
 
-}
+},
 
+/**
+ * 扫一扫
+ */
+scanCode:function(){
+
+  wx.scanCode({
+    success (res) {
+      console.log(res)
+    }
+  })
+
+},
+
+/**
+ * 添加设备
+ */
+add:function(){
+  wx.navigateTo({
+    url: "../password/password",
+  })
+},
+
+/**
+ * 切换设备
+ */
+switch:function(){
+  wx.showToast({
+    title: 'in development',
+    icon: 'none'
+  })
+}
 
 });
 

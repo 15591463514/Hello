@@ -1,7 +1,8 @@
 <!-- 遮盖层 -->
-<!-- <view style='width:100%;min-height:100%;background:red;background-size:100% 100%;'></view> -->
-<!-- 上部的设备信息 -->
+<view catchtap="hidden" style="height:100%">
 
+
+<!-- 上部的设备信息 -->
 <view class="top_wrap">
   <view class="top_inner">
     <image src="../../image/menu.png" class="menu" catchtap="menu"></image>
@@ -60,3 +61,4 @@
 </view>
 
 
+</view>

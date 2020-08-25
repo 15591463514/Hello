@@ -43,106 +43,135 @@ Page({
   
   handleButton(e){
  
+    // 判断菜单是否打开，如果关闭则触发按钮
+    if(this.data.equipment_liststatus){
+
+     
+      /**
+       * 点击按钮切换状态
+       */
+      
+      //根据缓存的数据判断是否是打开的
+      
+      //更新按钮处于的状态
+      let isOpen = !this.data.isOpen;
     
-    /**
-     * 点击按钮切换状态
-     */
-    
-    //根据缓存的数据判断是否是打开的
-    
-    //更新按钮处于的状态
-    let isOpen = !this.data.isOpen;
-   
-    this.setData({
-      isOpen
-    });
-
-    // //将状态缓存到本地
-    wx.setStorage({
-      key:"isOpen",
-      data:isOpen
-    });
-
-
-    /**
-     * 点击按钮发送请求
-     */
-
-
-    if(this.data.isOpen){
-      //发送请求数据
-      wx.request({
-        url:"http://api.qixingyun.com/data/send?appId=bd28ba07899da9f081&toCard=951140&content=%E6%89%93%E5%BC%80%E6%B0%B4%E4%BA%95&dataType=1",
-        success(res){
-          console.log(res.data);
-        }
+      this.setData({
+        isOpen
       });
-      wx.showToast({
-        title: '正在打开水井',
-        icon: 'loading',
-        duration: 1000
+
+      // //将状态缓存到本地
+      wx.setStorage({
+        key:"isOpen",
+        data:isOpen
       });
-      setTimeout(function(){
+
+
+      /**
+       * 点击按钮发送请求
+       */
+
+
+      if(this.data.isOpen){
+        //发送请求数据
+        wx.request({
+          url:"http://api.qixingyun.com/data/send?appId=bd28ba07899da9f081&toCard=951140&content=%E6%89%93%E5%BC%80%E6%B0%B4%E4%BA%95&dataType=1",
+          success(res){
+            console.log(res.data);
+          }
+        });
         wx.showToast({
-          title: '水井已打开',
-        })
-      },2000)
+          title: '正在打开水井',
+          icon: 'loading',
+          duration: 1000
+        });
+        setTimeout(function(){
+          wx.showToast({
+            title: '水井已打开',
+          })
+        },2000)
+
+
+      }else{
+
+        wx.request({
+          url:"http://api.qixingyun.com/data/send?appId=bd28ba07899da9f081&toCard=951140&content=%E5%85%B3%E9%97%AD%E6%B0%B4%E4%BA%95123456&dataType=1",
+          success(res){
+            console.log(res.data);
+          }
+        });
+        wx.showToast({
+          title: '正在关闭水井',
+          icon: 'loading',
+          duration: 1000
+        });
+        setTimeout(function(){
+          wx.showToast({
+            title: '水井已关闭',
+          })
+        },2000)
+      }
+      
+      var timestamp1 = Date.parse( new Date());
+      this.setData({
+        timestamp1:timestamp1
+      })
+      //console.log(this.data.timestamp1);
+
+
+      /**
+       * 点击按钮一段时间禁止再次点击
+       */
+      
+      //执行完后，设置按钮禁用状态
+      this.setData({
+        disabled:1
+      })
+
+      let sqs = this;
+      //10秒后，设置为可以点击的状态
+      setTimeout(function(back){
+        
+        var fun = function(){
+          sqs.setData({
+            disabled:0
+          })
+        }
+        fun();
+      },10000)
+
+      /**
+       * 点击按钮启动倒计时
+       */
+      this.setData({
+        second: 10
+      });
+      countdown(this);
+
 
     }else{
 
-      wx.request({
-        url:"http://api.qixingyun.com/data/send?appId=bd28ba07899da9f081&toCard=951140&content=%E5%85%B3%E9%97%AD%E6%B0%B4%E4%BA%95123456&dataType=1",
-        success(res){
-          console.log(res.data);
-        }
+      let liststatus= !this.data.equipment_liststatus;
+      this.setData({
+        equipment_liststatus : liststatus
       });
-      wx.showToast({
-        title: '正在关闭水井',
-        icon: 'loading',
-        duration: 1000
-      });
-      setTimeout(function(){
-        wx.showToast({
-          title: '水井已关闭',
-        })
-      },2000)
+
     }
+
+  },
+
+  /**
+   * 点击隐藏list
+   */
+  hidden:function(){
+    if(!this.data.equipment_liststatus){
+
     
-    var timestamp1 = Date.parse( new Date());
-    this.setData({
-      timestamp1:timestamp1
-    })
-    //console.log(this.data.timestamp1);
-
-
-    /**
-     * 点击按钮一段时间禁止再次点击
-     */
-    
-    //执行完后，设置按钮禁用状态
-    this.setData({
-      disabled:1
-    })
-
-    let sqs = this;
-    //10秒后，设置为可以点击的状态
-    setTimeout(function(back){
-      
-      var fun = function(){
-        sqs.setData({
-          disabled:0
-        })
-      }
-      fun();
-    },10000)
-
-    /**
-     * 点击按钮启动倒计时
-     */
-    this.setData({
-      second: 10
-     });
-    countdown(this);
+    let liststatus= !this.data.equipment_liststatus;
+      this.setData({
+        equipment_liststatus : liststatus
+      });
+    }
   },
 
 
@@ -176,25 +205,26 @@ Page({
      */
     // 水井已打开	A4CBAEBEAED2D1B4F2BFAA
     // 水井已关闭	A4CBAEBEAED2D1B9D8B1D5
-    let lastStatus = wx.getStorageSync('lastStatus');
-    if(lastStatus == "A4CBAEBEAED2D1B4F2BFAA"){
-      this.setData({
-        isOpen:true
-      });
-      console.log("水井已打开");
-    }
-    else if(lastStatus == "A4CBAEBEAED2D1B9D8B1D5"){
-      this.setData({
-        isOpen:false
-      });
-      console.log("水井已关闭");
-    }else{
-      //这种情况是牧场的终端发回来的牛的数量，这种情况下按钮的状态也应该是打开的
-      this.setData({
-        isOpen:true
-      });
-      console.log("水井已打开");
-    }
+
+    // let lastStatus = wx.getStorageSync('lastStatus');
+    // if(lastStatus == "A4CBAEBEAED2D1B4F2BFAA"){
+    //   this.setData({
+    //     isOpen:true
+    //   });
+    //   console.log("水井已打开");
+    // }
+    // else if(lastStatus == "A4CBAEBEAED2D1B9D8B1D5"){
+    //   this.setData({
+    //     isOpen:false
+    //   });
+    //   console.log("水井已关闭");
+    // }else{
+    //   //这种情况是牧场的终端发回来的牛的数量，这种情况下按钮的状态也应该是打开的
+    //   this.setData({
+    //     isOpen:true
+    //   });
+    //   console.log("水井已打开");
+    // }
 
 
     
@@ -371,11 +401,11 @@ switch:function(){
     title: 'in development',
     icon: 'none'
   })
-}
+},
+
+
 
 });
-
-
 
 
 
